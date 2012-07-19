@@ -12,7 +12,9 @@
 ;;;
 
 ; (load-script "http://yandex.st/raphael/1.5.2/raphael.js")
-
+(load-script "mathjax-script.js")
+(load-script "raphael-min.js")
+ 
 (define paper #f)
 
 (define (raphael-init id width height)
@@ -748,7 +750,7 @@
           (format "$s = \\textrm{den halve omkreds} = \\frac{~a+~a+~a}{2} = \\frac{~a+~a+~a}{2} = ~a$"
                   na nb nc a b c (/ (+ a b c) 2))
           (format "$T = \\textrm{Areal} = \\sqrt{s(s-~a)(s-~a)(s-~a)} = \\sqrt{s\\cdot(s-~a)\\cdot(s-~a)\\cdot(s-~a)}=~a$"
-                  na nb nc a b c (sqrt (* s (- s a) (- s b) (- s c)))))))
+                  na nb nc a b c (sqrt (* s (- s a) (- s b) (- s b)))))))
 
 (define (perimeter a b c na nb nc)
   (list (format "$\\textrm{Omkreds} = ~a+~a+~a = ~a+~a+~a = ~a$"
@@ -787,6 +789,7 @@
                          (td (div (@ (id "raphael_result"))))))
                     (h2 "Resultater")
                     (div (@ (id "result")) "Ingen resultater endnu. Indtast 3 stykker og klik beregn.")
+                    #;(begin
                     (h2 "Formelsamling")
                     (h3 "Cosinusrelationer")
                     (table 
@@ -830,7 +833,7 @@
                     (table 
                      (tr (td ,($height$ "a" "b" "c" "B" "C")) )
                      (tr (td ,($height$ "b" "a" "c" "A" "C")) )
-                     (tr (td ,($height$ "c" "a" "b" "A" "B")) ))))))]
+                     (tr (td ,($height$ "c" "a" "b" "A" "B")) )))))))]
          [view (view-bind (view-focus view "calculate") "click" on-click)]
          [view (view-bind (view-focus view "angleA") "focusin" (make-on-focusin 0))]
          [view (view-bind (view-focus view "angleB") "focusin" (make-on-focusin 1))]
