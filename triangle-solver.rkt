@@ -1,4 +1,13 @@
 #lang planet dyoo/whalesong
+
+;;;
+;;; Whalesong version:
+;;;    https://github.com/soegaard/whalesong/tree/patch-1
+;;;
+;;; Racket version:
+;;;    5.2.1
+;;;
+
 (require (planet dyoo/whalesong/resource)
          (planet dyoo/whalesong/web-world)
          (planet dyoo/whalesong/js))
@@ -11,10 +20,6 @@
 ;;; Whalesong binding of Raphael
 ;;;
 
-; (load-script "http://yandex.st/raphael/1.5.2/raphael.js")
-(load-script "mathjax-script.js")
-(load-script "raphael-min.js")
- 
 (define paper #f)
 
 (define (raphael-init id width height)
@@ -789,7 +794,6 @@
                          (td (div (@ (id "raphael_result"))))))
                     (h2 "Resultater")
                     (div (@ (id "result")) "Ingen resultater endnu. Indtast 3 stykker og klik beregn.")
-                    #;(begin
                     (h2 "Formelsamling")
                     (h3 "Cosinusrelationer")
                     (table 
@@ -833,7 +837,7 @@
                     (table 
                      (tr (td ,($height$ "a" "b" "c" "B" "C")) )
                      (tr (td ,($height$ "b" "a" "c" "A" "C")) )
-                     (tr (td ,($height$ "c" "a" "b" "A" "B")) )))))))]
+                     (tr (td ,($height$ "c" "a" "b" "A" "B")) ))))))]
          [view (view-bind (view-focus view "calculate") "click" on-click)]
          [view (view-bind (view-focus view "angleA") "focusin" (make-on-focusin 0))]
          [view (view-bind (view-focus view "angleB") "focusin" (make-on-focusin 1))]
