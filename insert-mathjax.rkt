@@ -6,6 +6,7 @@
 ;;; run MathJax. This small script injects the
 ;;; piece of JavaScript in the header.
 ;;; 
+;;; The script is called from build.sh.
 
 (define build-dir           "build")
 (define html-filename       "triangle-solver.html")

@@ -1,3 +1,7 @@
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+<style>
+    h1, h2, h3, body  { font-family: 'Open Sans', serif; }
+</style>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],

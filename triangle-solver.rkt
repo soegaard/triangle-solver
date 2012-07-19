@@ -23,7 +23,6 @@
 (define paper #f)
 
 (define (raphael-init id width height)
-  ; (js-eval "registerCufonFonts();")  ; using raphael-text instead
   (set! paper
         (js-eval 
          (format "Raphael(~s, ~a, ~a)"
@@ -775,6 +774,7 @@
                    (head (title "Trekantsberegner"))
                    (body 
                     (h1 "Trekantsberegner")
+                    (h3 "Jens Axel Søgaard, 2012")
                     (h2 "Indtast 3 sider/vinkler")
                     (table 
                      (tr (td (div
@@ -794,6 +794,7 @@
                          (td (div (@ (id "raphael_result"))))))
                     (h2 "Resultater")
                     (div (@ (id "result")) "Ingen resultater endnu. Indtast 3 stykker og klik beregn.")
+                    (hr)
                     (h2 "Formelsamling")
                     (h3 "Cosinusrelationer")
                     (table 
@@ -837,7 +838,9 @@
                     (table 
                      (tr (td ,($height$ "a" "b" "c" "B" "C")) )
                      (tr (td ,($height$ "b" "a" "c" "A" "C")) )
-                     (tr (td ,($height$ "c" "a" "b" "A" "B")) ))))))]
+                     (tr (td ,($height$ "c" "a" "b" "A" "B")) ))
+                    (hr)
+                    (h2 "Mail jensaxel@soegaard.net med kommentarer, spørgsmål, fejlmeldinger eller andet.")))))]
          [view (view-bind (view-focus view "calculate") "click" on-click)]
          [view (view-bind (view-focus view "angleA") "focusin" (make-on-focusin 0))]
          [view (view-bind (view-focus view "angleB") "focusin" (make-on-focusin 1))]
