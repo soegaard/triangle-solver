@@ -755,7 +755,7 @@
           (format "$s = \\textrm{den halve omkreds} = \\frac{~a+~a+~a}{2} = \\frac{~a+~a+~a}{2} = ~a$"
                   na nb nc a b c (/ (+ a b c) 2))
           (format "$T = \\textrm{Areal} = \\sqrt{s(s-~a)(s-~a)(s-~a)} = \\sqrt{s\\cdot(s-~a)\\cdot(s-~a)\\cdot(s-~a)}=~a$"
-                  na nb nc a b c (sqrt (* s (- s a) (- s b) (- s b)))))))
+                  na nb nc a b c (sqrt (* s (- s a) (- s b) (- s c)))))))
 
 (define (perimeter a b c na nb nc)
   (list (format "$\\textrm{Omkreds} = ~a+~a+~a = ~a+~a+~a = ~a$"
