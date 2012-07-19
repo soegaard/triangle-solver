@@ -1,4 +1,4 @@
-<script type="text/javascript" src="MathJax/MathJax.js">
+<script type="text/javascript" src="mathjax/MathJax.js">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX", "output/HTML-CSS"],
